@@ -1,0 +1,36 @@
+STRING|Experiment ID| |CCMAZE_DYADIC_MULTI_PARTICIPANTS_SEPARATEDYADS_DPBASELINE|CCMAZE_DYADIC_MULTI_PARTICIPANTS_SEPARATEDYADS_DPBASELINE|
+INT|Number of participants per conversation| |4|4|
+STRINGFIXED|Chat tool interface| |Formulate revise then send. Single or multiple windows|Formulate revise then send. Single or multiple windows|
+INT|Number of windows per chat tool| |2|2|
+STRING|Window numbering policy| |EACHOWNWINDOWATTOPENABLED|EACHOWNWINDOWATTOPENABLED|
+STRINGFIXED|Window numbering policy| |ONEWINDOWENABLED|ONEWINDOWENABLED|
+STRINGFIXED|Background colour| |BLACK|null|
+STRINGFIXED|Text colour self| |WHITE|WHITE|
+STRINGFIXED|Text colour other 1| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 2| |RED|RED|
+STRINGFIXED|Text colour other 3| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 4| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 5| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 6| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 7| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 9| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 9| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 10| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 11| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 12| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 13| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 14| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 15| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 16| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 17| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 18| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 19| |YELLOW|YELLOW|
+STRINGFIXED|Text colour other 20| |YELLOW|YELLOW|
+INT|Width of main window| |400|400|
+INT|Height of main window| |250|250|
+INT|Width of text entry window| |120|120|
+INT|Height of text entry window| |80|80|
+INT|Maximum length of textentry| |1000|1000|
+STRINGFIXED|Horizontal or vertical alignment of multiple windows| |Vertical|Vertical|
+INT|Typing status timeout (msecs)| |1000|1000|
+INT|NumberOfTurns| |0|0|

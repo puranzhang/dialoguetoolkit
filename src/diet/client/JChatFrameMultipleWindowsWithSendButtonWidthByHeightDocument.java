@@ -1,0 +1,142 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package diet.client;
+
+import diet.attribval.AttribVal;
+import diet.server.ConversationController.DefaultConversationController;
+import java.util.Date;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DefaultStyledDocument;
+
+/**
+ *
+ * @author sre
+ */
+public class JChatFrameMultipleWindowsWithSendButtonWidthByHeightDocument extends DefaultStyledDocument{
+
+   
+    
+    JChatFrameMultipleWindowsWithSendButtonWidthByHeight jcfmwwsbwbh;
+
+    public JChatFrameMultipleWindowsWithSendButtonWidthByHeightDocument(JChatFrameMultipleWindowsWithSendButtonWidthByHeight jcfmwwsbwbh) {
+       this.jcfmwwsbwbh = jcfmwwsbwbh;
+    }
+
+    public boolean permitDeletes = true;
+    
+    public void setPermitDeletes(boolean permitDeletes){
+        this.permitDeletes=permitDeletes;
+    }
+    
+
+    
+    
+
+    @Override
+    public void insertString(int offs, String str, AttributeSet a) throws BadLocationException {
+        
+        if(super.getLength()+str.length()>this.jcfmwwsbwbh.maxcharlength)return;
+
+        
+        System.err.println("INSERT:"+offs+" STRING: "+str+" DOCUMENTLENGTH:"+super.getLength()); 
+        
+        long timeOfDisplay = new Date().getTime();
+        
+        super.insertString(offs, str, jcfmwwsbwbh.getSelfStyle());
+        
+        AttribVal av1 = new AttribVal("offset",offs);
+        AttribVal av2 = new AttribVal("text",str);
+         String finalstring = super.getText(0, super.getLength());
+        AttribVal av5 = new AttribVal("finalstring", finalstring);
+        
+        jcfmwwsbwbh.getClientEventHandler().reportInterfaceEvent(ClientInterfaceEventTracker.textentryfield_insertstring,  timeOfDisplay, av1, av2, av5);
+    }
+
+ 
+     @Override
+    public void remove(int offs, int len) throws BadLocationException {
+        if(!this.permitDeletes)return;
+        this.remove(offs, len, false);
+    }
+    
+    
+    
+    public void remove(int offs, int len, boolean isAutoClearAfterSendingMessage) throws BadLocationException {
+        
+        String textbeingDeleted = "NOTSETCORRECTLY";
+        try{
+            textbeingDeleted =      super.getText(offs, len)   ;        
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+      
+        long timeOfDisplay = new Date().getTime();
+        
+        super.remove(offs, len);
+        AttribVal av1 = new AttribVal("offset",offs);
+        AttribVal av2 = new AttribVal("len",len);
+        AttribVal av3 = new AttribVal("textbeingdeleted",textbeingDeleted);
+        //AttribVal av4 = new AttribVal("timeofdisplay",timeOfDisplay);
+        AttribVal av5 = new AttribVal("autoclear","FALSE");  //isautoclearpostsend
+        if(isAutoClearAfterSendingMessage){
+            av5.value="TRUE";
+        }
+        
+        jcfmwwsbwbh.getClientEventHandler().reportInterfaceEvent(ClientInterfaceEventTracker.textentryfield_removestring,  timeOfDisplay, av1, av2, av3, av5);   
+    }
+
+    @Override
+    public void replace(int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+       
+        //text = text + "Offset: "+offset+" LENGTH:"+length+"    "   ;
+        String textBeingDeleted = "";
+        
+        
+        
+        
+        int totallengthOfDocument = super.getLength();
+        int totallengthOfProposedChanges = text.length()-offset;
+        if(totallengthOfProposedChanges>totallengthOfDocument + this.jcfmwwsbwbh.maxcharlength)return;
+
+        long timeOfDisplay = new Date().getTime();
+        
+        super.replace(offset, length, text, jcfmwwsbwbh.getSelfStyle());
+        
+        AttribVal av1 = new AttribVal("offset",offset);
+        AttribVal av2 = new AttribVal("texttyped",text);
+       
+        
+        AttribVal av4 = new AttribVal("length",length);
+        String finalstring = super.getText(0, super.getLength());
+        AttribVal av5 = new AttribVal("finalstring", finalstring);
+   
+        try{
+            
+            textBeingDeleted = super.getText(offset, length);
+            System.err.println("Offset: "+offset+" LENGTH:"+length+" textbeingdeleted:"+textBeingDeleted);
+            
+            if(textBeingDeleted!=null && !textBeingDeleted.equals("")){
+                AttribVal av6 = new AttribVal("textbeingdeleted",textBeingDeleted);
+                 jcfmwwsbwbh.getClientEventHandler().reportInterfaceEvent(ClientInterfaceEventTracker.textentryfield_replacestring,  timeOfDisplay,  av1, av2, av4, av5, av6);
+                 return;
+            }
+            
+            
+            
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        
+        
+        jcfmwwsbwbh.getClientEventHandler().reportInterfaceEvent(ClientInterfaceEventTracker.textentryfield_replacestring,  timeOfDisplay,  av1, av2, av4, av5);
+        
+        
+    }
+
+
+
+}

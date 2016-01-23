@@ -1,0 +1,68 @@
+------------
+ParticipantID: 1111A Username: 1111A logged in.
+List of all logged in participants below:
+0) ParticipantID: 1111A Username: 1111A
+There is 1 participant logged in.
+------------
+ParticipantID: 2222A Username: 2222A logged in.
+List of all logged in participants below:
+0) ParticipantID: 1111A Username: 1111A
+1) ParticipantID: 2222A Username: 2222A
+There are 2 participants logged in. (see list immediately above)
+------------
+ParticipantID: 3333A Username: 3333A logged in.
+List of all logged in participants below:
+0) ParticipantID: 1111A Username: 1111A
+1) ParticipantID: 2222A Username: 2222A
+2) ParticipantID: 3333A Username: 3333A
+There are 3 participants logged in. (see list immediately above)
+------------
+ParticipantID: 4444A Username: 4444A logged in.
+List of all logged in participants below:
+0) ParticipantID: 1111A Username: 1111A
+1) ParticipantID: 2222A Username: 2222A
+2) ParticipantID: 3333A Username: 3333A
+3) ParticipantID: 4444A Username: 4444A
+There are 4 participants logged in. (see list immediately above)
+------------
+ParticipantID: 1111B Username: 1111B logged in.
+List of all logged in participants below:
+0) ParticipantID: 1111A Username: 1111A
+1) ParticipantID: 1111B Username: 1111B
+2) ParticipantID: 2222A Username: 2222A
+3) ParticipantID: 3333A Username: 3333A
+4) ParticipantID: 4444A Username: 4444A
+There are 5 participants logged in. (see list immediately above)
+------------
+ParticipantID: 2222B Username: 2222B logged in.
+List of all logged in participants below:
+0) ParticipantID: 1111A Username: 1111A
+1) ParticipantID: 1111B Username: 1111B
+2) ParticipantID: 2222A Username: 2222A
+3) ParticipantID: 2222B Username: 2222B
+4) ParticipantID: 3333A Username: 3333A
+5) ParticipantID: 4444A Username: 4444A
+There are 6 participants logged in. (see list immediately above)
+------------
+ParticipantID: 3333B Username: 3333B logged in.
+List of all logged in participants below:
+0) ParticipantID: 1111A Username: 1111A
+1) ParticipantID: 1111B Username: 1111B
+2) ParticipantID: 2222A Username: 2222A
+3) ParticipantID: 2222B Username: 2222B
+4) ParticipantID: 3333A Username: 3333A
+5) ParticipantID: 3333B Username: 3333B
+6) ParticipantID: 4444A Username: 4444A
+There are 7 participants logged in. (see list immediately above)
+------------
+ParticipantID: 4444B Username: 4444B logged in.
+List of all logged in participants below:
+0) ParticipantID: 1111A Username: 1111A
+1) ParticipantID: 1111B Username: 1111B
+2) ParticipantID: 2222A Username: 2222A
+3) ParticipantID: 2222B Username: 2222B
+4) ParticipantID: 3333A Username: 3333A
+5) ParticipantID: 3333B Username: 3333B
+6) ParticipantID: 4444A Username: 4444A
+7) ParticipantID: 4444B Username: 4444B
+There are 8 participants logged in. (see list immediately above)
